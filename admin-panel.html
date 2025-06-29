@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Panel</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white p-6">
+  <h1 class="text-2xl font-bold mb-4">👑 Admin Panel</h1>
+  <button onclick="loadUsers()" class="bg-blue-600 px-4 py-2 rounded">Load Users</button>
+  <ul id="user-list" class="mt-4 space-y-2"></ul>
+
+  <script>
+    async function loadUsers() {
+      const res = await fetch("http://localhost:5000/admin/users");
+      const data = await res.json();
+      const list = document.getElementById("user-list");
+      list.innerHTML = "";
+      data.users.forEach(u => {
+        list.innerHTML += `<li class='bg-gray-800 p-2 rounded'>${u.email}</li>`;
+      });
+    }
+  </script>
+</body>
+</html>
