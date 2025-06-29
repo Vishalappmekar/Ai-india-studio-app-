@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Studio Pro – BharatGPT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🇮🇳 AI Studio Pro</h1>
+    <p>Made in India – Create, Talk & Deploy AI with Ease</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>🎤 Voice to Text (Whisper)</h2>
+      <button onclick="startRecording()">Start Recording</button>
+      <p id="transcript"></p>
+    </section>
+
+    <section class="card">
+      <h2>🤖 Generate with HuggingFace</h2>
+      <input type="text" id="prompt" placeholder="Enter your prompt" />
+      <button onclick="generateText()">Generate</button>
+      <p id="response"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Powered by Flask • HuggingFace • Whisper • Firebase</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
